@@ -2,10 +2,7 @@ describe('Upload', () => {
 
     beforeEach(() => {
         cy.goHome()
-
-        cy.login('papito@cyskills.com.br', 'showtime')
-        cy.userLoggedIn()
-
+        cy.doLogin()
         cy.goTo('/upload', 'Upload')
     })
 
@@ -16,7 +13,6 @@ describe('Upload', () => {
                 expect(element[0].files[0].name).to.equal('doc.pdf')
             })
     })
-
 
     it.only('Deve anexar uma imagem', () => {
         cy.get('input[name="photo"]')
@@ -30,6 +26,6 @@ describe('Upload', () => {
             .should('be.visible')
             .should('have.attr', 'src')
             .and('include', 'blob')
-
     })
+    
 })

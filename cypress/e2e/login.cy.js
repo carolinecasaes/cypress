@@ -23,5 +23,20 @@ describe('Login', () => {
     cy.login('www.cyskills.com.br', 'showtime')
     cy.noticeHave('O formato do e-mail está incorreto. Por favor, verifique e tente novamente!')
   })
+
+  it('Não deve logar sem o email', () => {
+    cy.login('', 'abc12345678')
+    cy.noticeHave('Parece que você esqueceu de informar seu e-mail.')
+  })
+
+  it('Não deve logar sem a senha', () => {
+    cy.login('fernando@teste.com', '')
+    cy.noticeHave('Por favor, digite sua senha para continuar.')
+  })
+
+  it.only('Não deve logar sem email e sem a senha', () => {
+    cy.login('', '')
+    cy.noticeHave('Parece que você esqueceu de informar seu e-mail.')
+  })
 })
 

@@ -33,10 +33,20 @@ Cypress.Commands.add('goHome', () => {
         .should('be.visible')
 })
 
-Cypress.Commands.add('login', (email, password) => {
-    cy.get('[data-cy="email"]').type(email)
-    cy.get('[data-cy="password"]').type(password)
+//Essa custom command é um Helper, pra não precisar ficar repetindo o login em todas as pastas  
+Cypress.Commands.add('doLogin', ()=> {
+    cy.login('papito@cyskills.com.br', 'showtime')
+    cy.userLoggedIn()
+})
 
+Cypress.Commands.add('login', (email, password) => {
+    if (email) {
+        cy.get('[data-cy="email"]').type(email)
+    }
+
+    if (password) {
+        cy.get('[data-cy="password"]').type(password)
+    }
     cy.get('[data-cy="login-button"]').click()
 })
 

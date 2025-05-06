@@ -2,10 +2,7 @@ describe('Select', () => {
 
     beforeEach(() => {
         cy.goHome()
-
-        cy.login('papito@cyskills.com.br', 'showtime')
-        cy.userLoggedIn()
-
+        cy.doLogin()
         cy.goTo('/select', 'Select')
     })
 
@@ -16,7 +13,7 @@ describe('Select', () => {
             .select('Cypress')
     })
 
-    it.only('Deve escolher as linguagens que usam Node.js', () => {
+    it('Deve escolher as linguagens que usam Node.js', () => {
         const langs = ['JavaScript', 'TypeScript']
 
         cy.get('input[placeholder^="Linguagens de programação"]')

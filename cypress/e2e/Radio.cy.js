@@ -2,10 +2,7 @@ describe('Radio Buttons', () => {
 
     beforeEach(() => {
         cy.goHome()
-
-        cy.login('papito@cyskills.com.br', 'showtime')
-        cy.userLoggedIn()
-
+        cy.doLogin()
         cy.goTo('/radio', 'Radio Buttons')
     })
 
@@ -13,4 +10,5 @@ describe('Radio Buttons', () => {
         cy.contains('label', 'Cypress')
             .click()
     })
+    
 })
