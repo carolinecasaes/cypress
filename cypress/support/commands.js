@@ -25,16 +25,14 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 Cypress.Commands.add('goHome', () => {
-    cy.viewport(1920, 1080)
-
-    cy.visit('https://playground.cyskills.com.br')
+    cy.visit('/login')
 
     cy.contains('h2', 'Faça login')
         .should('be.visible')
 })
 
 //Essa custom command é um Helper, pra não precisar ficar repetindo o login em todas as pastas  
-Cypress.Commands.add('doLogin', ()=> {
+Cypress.Commands.add('doLogin', () => {
     cy.login('papito@cyskills.com.br', 'showtime')
     cy.userLoggedIn()
 })

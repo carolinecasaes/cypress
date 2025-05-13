@@ -18,28 +18,36 @@ describe('Tables', () => {
         const name = 'Facebook'
 
         cy.contains('table tbody tr', '1002')
-        .find('.remove-item')
-        .click()
+            .find('.remove-item')
+            .click()
 
         cy.contains('button', 'Excluir')
-        .click()
+            .click()
 
         cy.get('table tbody')
-        .should('not.contain', name)
+            .should('not.contain', name)
     })
 
     it('Deve permanecer na tabela ao desistir da exclusão', () => {
         const name = 'Youtube'
 
         cy.contains('table tbody tr', '1005')
-        .find('.remove-item')
-        .click()
+            .find('.remove-item')
+            .click()
 
         cy.contains('button', 'Cancelar')
-        .click()
+            .click()
 
         cy.get('table tbody')
-        .should('contain', name)
+            .should('contain', name)
 
+    })
+
+    it('Deve clicar no link que abre o instagram', () => {
+        const id = 'instapapito'
+
+        cy.contains('table tbody tr', id)
+            .contains('a', 'Visitar')
+            .click
     })
 })

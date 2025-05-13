@@ -1,6 +1,6 @@
 describe('Date Picker', () => {
 
-    beforeEach(() => {
+     beforeEach(() => {
         cy.goHome()
         cy.doLogin()
         cy.goTo('/date-picker', 'Date Picker')
@@ -18,6 +18,6 @@ describe('Date Picker', () => {
 
             cy.get('span[aria-label="Dezembro 15, 1996"]')
             .click()
-    })
 
+    })
 })
