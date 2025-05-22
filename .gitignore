@@ -1,4 +1,4 @@
-.yarn/*
+yarn cy.yarn/*
 !.yarn/patches
 !.yarn/plugins
 !.yarn/releases
@@ -12,3 +12,7 @@
 #!.yarn/cache
 .pnp.*
 *.txt
+
+cypress/downloads
+cypress/screenshots
+cypress/videos

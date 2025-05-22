@@ -25,7 +25,7 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 Cypress.Commands.add('goHome', () => {
-    cy.visit('/login')
+    cy.visit('/')
 
     cy.contains('h2', 'Faça login')
         .should('be.visible')

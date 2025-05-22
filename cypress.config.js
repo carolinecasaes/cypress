@@ -6,5 +6,6 @@ module.exports = {
         baseUrl: 'https://playground.cyskills.com.br',
     viewportHeight: 1080,
     viewportWidth: 1920,
+    video: true
   },
 };

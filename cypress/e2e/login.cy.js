@@ -34,7 +34,7 @@ describe('Login', () => {
     cy.noticeHave('Por favor, digite sua senha para continuar.')
   })
 
-  it.only('Não deve logar sem email e sem a senha', () => {
+  it('Não deve logar sem email e sem a senha', () => {
     cy.login('', '')
     cy.noticeHave('Parece que você esqueceu de informar seu e-mail.')
   })
